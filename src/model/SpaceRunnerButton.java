@@ -12,13 +12,13 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 
-public class SpaceShooterButton extends Button {
+public class SpaceRunnerButton extends Button {
     private final String FONT_PATH = "resources/kenvector_future.ttf";
     // definie un style pour le button qu'on va creer 
     private final String BUTTON_PRESSED_STYLE = "-fx-setAlignment: center; -fx-background-color: grey; -fx-bakcground-image: url('resources/buttonLong_blue_pressed.png');";
     private final String BUTTON_FREE_STYLE = "-fx-setAlignment: center; -fx-background-color: grey; -fx-bakcground-image: url('resources/buttonLong_blue.png');";
 
-    public SpaceShooterButton(String text) {
+    public SpaceRunnerButton(String text) {
         setText(text);
         setButtonFont();
         setPrefHeight(49);

@@ -10,7 +10,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.util.Duration;
 
-public class SpaceShooterSubScene extends SubScene{
+public class SpaceRunnerSubScene extends SubScene{
 	
 	//private final static String FONT_PATH = "file:src/main/resources/com/example//kenvector_future.ttf";
 	private final static String BACKGROUND_IMAGE = "resources/subscenebg.png";
@@ -18,7 +18,7 @@ public class SpaceShooterSubScene extends SubScene{
 	private  boolean isHidden;
 	
 	
-	public SpaceShooterSubScene() {
+	public SpaceRunnerSubScene() {
 		super(new AnchorPane(), 600, 400);
 		prefWidth(600);
 		prefHeight(400);

@@ -6,8 +6,8 @@ import java.util.List;
 import model.InfoLabel;
 import model.Ship;
 import model.ShipPicker;
-import model.SpaceShooterButton;
-import model.SpaceShooterSubScene;
+import model.SpaceRunnerButton;
+import model.SpaceRunnerSubScene;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -48,15 +48,15 @@ public class ViewManager {
     private final static int MENU_BUTTONS_START_Y = 250;
 
 	// les fenetres des buttons 
-	private SpaceShooterSubScene shipChooserSubScene;
-	private SpaceShooterSubScene scoreSubscene;
-	private SpaceShooterSubScene helpSubscene;
-	private SpaceShooterSubScene creditsSubscene;
+	private SpaceRunnerSubScene shipChooserSubScene;
+	private SpaceRunnerSubScene scoreSubscene;
+	private SpaceRunnerSubScene helpSubscene;
+	private SpaceRunnerSubScene creditsSubscene;
 	
-	private SpaceShooterSubScene sceneToHide; 
+	private SpaceRunnerSubScene sceneToHide; 
 
     // liste pour stocker les buttons pour le menu 
-    List<SpaceShooterButton> menuButtons;
+    List<SpaceRunnerButton> menuButtons;
 
 	// liste des vaisseaux 
 	List<ShipPicker> shipsList;
@@ -79,7 +79,7 @@ public class ViewManager {
         return mainStage;
     }
 
-	private void showSubScene(SpaceShooterSubScene subScene) {
+	private void showSubScene(SpaceRunnerSubScene subScene) {
 		if(sceneToHide != null) {
 			sceneToHide.moveSubScene();
 		}
@@ -90,7 +90,7 @@ public class ViewManager {
 	}
 	private void createSubScenes() {
 		
-		scoreSubscene = new SpaceShooterSubScene();
+		scoreSubscene = new SpaceRunnerSubScene();
 		mainPane.getChildren().addAll(scoreSubscene);
 
 		createShipChooserSubScene();
@@ -102,7 +102,7 @@ public class ViewManager {
 	// PLAY SUBSCENE
 	// -------------------------------------------------------------------------
 	private void createShipChooserSubScene() {
-		shipChooserSubScene = new SpaceShooterSubScene();
+		shipChooserSubScene = new SpaceRunnerSubScene();
 		mainPane.getChildren().add(shipChooserSubScene);
 
 		InfoLabel chooseShipLabel = new InfoLabel("CHOOSE YOUR SHIP");
@@ -144,7 +144,7 @@ public class ViewManager {
 	// CREDITS SUBSCENE
 	// -------------------------------------------------------------------------
 	private void createCreditsSubScene() {
-		creditsSubscene = new SpaceShooterSubScene();
+		creditsSubscene = new SpaceRunnerSubScene();
 		mainPane.getChildren().add(creditsSubscene);
 
 		InfoLabel creditsLabel = new InfoLabel("CREDITS");
@@ -192,7 +192,7 @@ public class ViewManager {
 	// HELP SUBSCENE
 	// -------------------------------------------------------------------------
 	private void createHelpSubScene() {
-		helpSubscene = new SpaceShooterSubScene();
+		helpSubscene = new SpaceRunnerSubScene();
 		mainPane.getChildren().add(helpSubscene);
 		
 		InfoLabel helpLabel = new InfoLabel("HELP");
@@ -221,8 +221,8 @@ public class ViewManager {
 	// LES BUTTONS DE MENU INTITAL 
 	// -------------------------------------------------------------------------------------
 	//
-	private SpaceShooterButton createButtonToStart() {
-		SpaceShooterButton startButton = new SpaceShooterButton("START");
+	private SpaceRunnerButton createButtonToStart() {
+		SpaceRunnerButton startButton = new SpaceRunnerButton("START");
 		startButton.setLayoutX(350);
 		startButton.setLayoutY(300);
 		
@@ -242,7 +242,7 @@ public class ViewManager {
 		return startButton;
 	}
 
-    private void addMenuButton(SpaceShooterButton button) {
+    private void addMenuButton(SpaceRunnerButton button) {
         button.setLayoutX(MENU_BUTTONS_START_X);
         button.setLayoutY(MENU_BUTTONS_START_Y + menuButtons.size() * 80);
         menuButtons.add(button);
@@ -258,7 +258,7 @@ public class ViewManager {
     }
 
     private void createStartButton() {
-		SpaceShooterButton startButton = new SpaceShooterButton("PLAY");
+		SpaceRunnerButton startButton = new SpaceRunnerButton("PLAY");
 		addMenuButton(startButton);
 		
 		startButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -272,7 +272,7 @@ public class ViewManager {
 	}
 	
 	private void createScoresButton() {
-		SpaceShooterButton scoresButton = new SpaceShooterButton("SCORES");
+		SpaceRunnerButton scoresButton = new SpaceRunnerButton("SCORES");
 		addMenuButton(scoresButton);
 		
 		scoresButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -286,7 +286,7 @@ public class ViewManager {
 	}
 	
 	private void createHelpButton() {
-		SpaceShooterButton helpButton = new SpaceShooterButton("HELP");
+		SpaceRunnerButton helpButton = new SpaceRunnerButton("HELP");
 		addMenuButton(helpButton);
 		
 		helpButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -301,7 +301,7 @@ public class ViewManager {
 	
 	private void createCreditsButton() {
 		
-		SpaceShooterButton creditsButton = new SpaceShooterButton("CREDITS");
+		SpaceRunnerButton creditsButton = new SpaceRunnerButton("CREDITS");
 		addMenuButton(creditsButton);
 		
 		
@@ -316,7 +316,7 @@ public class ViewManager {
 	}
 	
 	private void createExitButton() {
-		SpaceShooterButton exitButton = new SpaceShooterButton("EXIT");
+		SpaceRunnerButton exitButton = new SpaceRunnerButton("EXIT");
 		addMenuButton(exitButton);
 		
 		exitButton.setOnAction(new EventHandler<ActionEvent>() {

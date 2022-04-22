@@ -240,7 +240,7 @@ public class ViewManager {
 		score1.setFont(Font.font("Verdana",20));
 		score2.setFont(Font.font("Verdana",20));
 		score3.setFont(Font.font("Verdana",20));
-		scoreContainer.setBackground(new Background(new BackgroundFill(Color.MEDIUMAQUAMARINE, new CornerRadii(20), new Insets(-20,-20,-20,-20))));
+		scoreContainer.setBackground(new Background(new BackgroundFill(Color.GRAY, new CornerRadii(20), new Insets(-20,-20,-20,-20))));
 		scoreContainer.getChildren().addAll(scoreHeading, score1, score2, score3);
 		
 		scoreSubscene.getPane().getChildren().addAll(score, scoreContainer);//, score1, score2, score3);		

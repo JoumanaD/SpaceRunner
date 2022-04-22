@@ -1,5 +1,6 @@
-# SpaceRunnerGame
-Projet CPA : SpaceRunner Game 
+# SpaceRunnerGame - Projet CPA
+
+Implement game Space Runner in JavaFX 
 
 ## Images du jeu 
 ### Menu

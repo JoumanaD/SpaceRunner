@@ -11,17 +11,22 @@ import model.SpaceRunnerSubScene;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -89,10 +94,13 @@ public class ViewManager {
 
 	}
 	private void createSubScenes() {
-		
-		scoreSubscene = new SpaceRunnerSubScene();
-		mainPane.getChildren().addAll(scoreSubscene);
 
+		scoreSubscene = new SpaceRunnerSubScene();
+		creditsSubscene = new SpaceRunnerSubScene();
+		helpSubscene = new SpaceRunnerSubScene();
+		mainPane.getChildren().addAll(scoreSubscene, creditsSubscene, helpSubscene);
+		
+		createScoreSubScene();
 		createShipChooserSubScene();
 		createHelpSubScene();
 		createCreditsSubScene();
@@ -144,9 +152,6 @@ public class ViewManager {
 	// CREDITS SUBSCENE
 	// -------------------------------------------------------------------------
 	private void createCreditsSubScene() {
-		creditsSubscene = new SpaceRunnerSubScene();
-		mainPane.getChildren().add(creditsSubscene);
-
 		InfoLabel creditsLabel = new InfoLabel("CREDITS");
 		creditsLabel.setLayoutX(110);
 		creditsLabel.setLayoutY(25);
@@ -155,8 +160,8 @@ public class ViewManager {
 		etudiantTitre.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
 		etudiantTitre.setFill(Color.GOLD);
 		
-		Text n1 = new Text (50, 170, "ELDAKAR Joumana");
-		Text n2 = new Text (50, 200, "KAYA    Delphine");
+		Text n1 = new Text (50, 170, "ELDAKAR  Joumana");
+		Text n2 = new Text (50, 200, "KAYA        Delphine");
 		n1.setFont(Font.font ("Verdana", FontWeight.BOLD, 20));
 		n1.setFill(Color.WHITE);
 		n2.setFont(Font.font ("Verdana", FontWeight.BOLD, 20));
@@ -166,7 +171,7 @@ public class ViewManager {
 		encadrantTitre.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
 		encadrantTitre.setFill(Color.GOLD);
 		
-		Text prof = new Text (350, 185, " Binh-Minh Bui-Xuan");
+		Text prof = new Text (350, 185, "Binh-Minh Bui-Xuan");
 		prof.setFont(Font.font ("Verdana", FontWeight.BOLD, 20));
 		prof.setFill(Color.WHITE);
 		
@@ -182,9 +187,13 @@ public class ViewManager {
 		logoJeu.setLayoutX(60);
 		logoJeu.setLayoutY(220);
 		
+		Text info = new Text (60, 230, "logo du groupe");
+		info.setFont(Font.font ("Verdana", 10));
+		
+		
 		
 		creditsSubscene.getPane().getChildren().addAll(creditsLabel, etudiantTitre, n1,n2, 
-				encadrantTitre, prof, logoSorbonne, logoJeu);
+				encadrantTitre, prof, logoSorbonne, logoJeu, info);
 		
 	}
 	
@@ -192,9 +201,6 @@ public class ViewManager {
 	// HELP SUBSCENE
 	// -------------------------------------------------------------------------
 	private void createHelpSubScene() {
-		helpSubscene = new SpaceRunnerSubScene();
-		mainPane.getChildren().add(helpSubscene);
-		
 		InfoLabel helpLabel = new InfoLabel("HELP");
 		helpLabel.setLayoutX(110);
 		helpLabel.setLayoutY(25);
@@ -215,6 +221,31 @@ public class ViewManager {
 		helpSubscene.getPane().getChildren().addAll(helpLabel, projet, jeu, jeuDetails);
 	}
 	
+	private void createScoreSubScene() {
+		scoreSubscene = new SpaceRunnerSubScene();
+		mainPane.getChildren().add(scoreSubscene);
+		InfoLabel score = new InfoLabel("SCORES");
+		score.setLayoutX(115);
+		score.setLayoutY(20);
+		VBox scoreContainer = new VBox();
+		scoreContainer.setLayoutX(150);
+		scoreContainer.setLayoutY(150);
+		
+		Label scoreHeading = new Label("     Name			Score   ");
+		scoreHeading.setUnderline(true);
+		Label score1 = new Label("Astronaught 1		  100");
+		Label score2 = new Label("Astronaught 2		  100");
+		Label score3 = new Label("Astronaught 3		  100");
+		scoreHeading.setFont(Font.font("Verdana",20));
+		score1.setFont(Font.font("Verdana",20));
+		score2.setFont(Font.font("Verdana",20));
+		score3.setFont(Font.font("Verdana",20));
+		scoreContainer.setBackground(new Background(new BackgroundFill(Color.MEDIUMAQUAMARINE, new CornerRadii(20), new Insets(-20,-20,-20,-20))));
+		scoreContainer.getChildren().addAll(scoreHeading, score1, score2, score3);
+		
+		scoreSubscene.getPane().getChildren().addAll(score, scoreContainer);//, score1, score2, score3);		
+		
+	}
 	
 	
 	// -------------------------------------------------------------------------------------
@@ -337,11 +368,11 @@ public class ViewManager {
     }
 
 	private void createLogo() {
-		ImageView logo = new ImageView("resources/logo.png");
-		logo.setFitWidth(400);
-		logo.setFitHeight(250);
-		logo.setLayoutX(320);
-		logo.setLayoutY(50);
+		ImageView logo = new ImageView("resources/spacerunner.png");
+		logo.setFitWidth(500);
+		logo.setFitHeight(230);
+		logo.setLayoutX(280);
+		logo.setLayoutY(20);
 
 		logo.setOnMouseDragEntered(new EventHandler<MouseEvent>() {
 

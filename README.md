@@ -2,20 +2,13 @@
 Projet CPA : SpaceRunner Game 
 
 ## Images du jeu 
-[Menu]
+### Menu - Play Button
 
-<img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/1-menu.png" width="490" height="360">        <img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/2-buttonPlay.png" width="490" height="360">
-![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/1-menu.png =250x250)
+<img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/1-menu.png" width="490" height="360">  <img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/2-buttonPlay.png" width="490" height="360">
 
-[Play Button]
-![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/2-buttonPlay.png =250x250)
+### Scores Button - Help Button
 
-[Scores Button]
-![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/3-buttonScores.png =250x250)
+<img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/3-buttonScores.png" width="490" height="360">  <img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/4-buttonHelp.png" width="490" height="360">
 
-[Help Button]
-![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/4-buttonHelp.png =250x250)
-
-[Game]
-
-![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/6-Jeu.png =250x250)
+### Game
+![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/6-Jeu.png)

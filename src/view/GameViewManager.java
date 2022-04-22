@@ -1,5 +1,6 @@
 package view;
 
+import model.Sauvegarde;
 import model.Ship;
 import model.SmallInfoLabel;
 
@@ -331,9 +332,12 @@ public class GameViewManager {
     private void removeLife() {
     	gamePane.getChildren().remove(playerLifes[playerLife]);
     	playerLife--; 
+    	Sauvegarde save = new Sauvegarde();
     	if(playerLife < 0) {
     		gameStage.close();
     		gameTimer.stop();
+    		// A la fin de la partie, on sauvegarde le score a l'aide de la classe Sauvegarde
+			save.saveScoreOnFile(points);
     		menuStage.show();
     	}
     }

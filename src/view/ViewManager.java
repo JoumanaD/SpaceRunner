@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.InfoLabel;
+import model.Sauvegarde;
 import model.Ship;
 import model.ShipPicker;
 import model.SpaceRunnerButton;
@@ -59,7 +60,10 @@ public class ViewManager {
 	private SpaceRunnerSubScene creditsSubscene;
 	
 	private SpaceRunnerSubScene sceneToHide; 
-
+	
+	// attribut qui va permettre de sauvegarder les scores
+	private Sauvegarde save;
+	
     // liste pour stocker les buttons pour le menu 
     List<SpaceRunnerButton> menuButtons;
 
@@ -74,6 +78,7 @@ public class ViewManager {
         mainScene = new Scene(mainPane, WIDTH, HEIGHT);
         mainStage = new Stage();
         mainStage.setScene(mainScene);
+		save = new Sauvegarde();
 		createSubScenes();
         createButtons();
         createBackground();
@@ -215,36 +220,52 @@ public class ViewManager {
 				+ "- sauf les étoiles jaunes qui augmente le score\n\n"
 				+ "- Le joueur posséde 3 vies\n\n"
 				+ "- Une vie perdue lorsque un objet tombe sur le vaisseau\n\n"
-				+ "- Si le joueur perd les 3 vies alors il est perdu!\n\n");
+				+ "- Si le joueur perd les 3 vies alors il a perdu!\n\n");
 		jeuDetails.setFont(Font.font ("Verdana", FontWeight.BOLD, 15));
 		jeuDetails.setFill(Color.WHITE);
 		helpSubscene.getPane().getChildren().addAll(helpLabel, projet, jeu, jeuDetails);
 	}
-	
+
+	// -------------------------------------------------------------------------
+	// SCORE SUBSCENE
+	// -------------------------------------------------------------------------
 	private void createScoreSubScene() {
 		scoreSubscene = new SpaceRunnerSubScene();
 		mainPane.getChildren().add(scoreSubscene);
-		InfoLabel score = new InfoLabel("SCORES");
-		score.setLayoutX(115);
-		score.setLayoutY(20);
-		VBox scoreContainer = new VBox();
-		scoreContainer.setLayoutX(150);
-		scoreContainer.setLayoutY(150);
+		fillScoreSubscene();
+	}
+	// remplit la section de score
+	private void fillScoreSubscene() {
+		InfoLabel scoreLabel = new InfoLabel("SCORES");
+		scoreLabel.setLayoutX(110);
+		scoreLabel.setLayoutY(25);
 		
-		Label scoreHeading = new Label("     Name			Score   ");
-		scoreHeading.setUnderline(true);
-		Label score1 = new Label("Astronaught 1		  100");
-		Label score2 = new Label("Astronaught 2		  100");
-		Label score3 = new Label("Astronaught 3		  100");
-		scoreHeading.setFont(Font.font("Verdana",20));
-		score1.setFont(Font.font("Verdana",20));
-		score2.setFont(Font.font("Verdana",20));
-		score3.setFont(Font.font("Verdana",20));
-		scoreContainer.setBackground(new Background(new BackgroundFill(Color.GRAY, new CornerRadii(20), new Insets(-20,-20,-20,-20))));
-		scoreContainer.getChildren().addAll(scoreHeading, score1, score2, score3);
+		Text titre = new Text (50, 120, "Derniers Scores");
+		titre.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
+		titre.setFill(Color.GOLD);
+		scoreSubscene.getPane().getChildren().addAll(scoreLabel, titre);
 		
-		scoreSubscene.getPane().getChildren().addAll(score, scoreContainer);//, score1, score2, score3);		
-		
+		// on recupere les scores depuis la sauvegarde et on l'affiche sur notre section
+		int j = 150;
+		ArrayList<String> scores = save.getListScores();
+		int tailleaffichage = 5;
+		if(scores.size() < 5)  tailleaffichage = scores.size(); 
+		for(int i = 0; i<tailleaffichage; i++) {
+			String score = (i+1) + scores.get(i);
+			Text t = new Text (50, j, score);
+			j += 30;
+			t.setFont(Font.font ("Verdana", FontWeight.BOLD, 20));
+			t.setFill(Color.BEIGE);
+			scoreSubscene.getPane().getChildren().add(t);
+		}
+		scoreSubscene.getPane().getChildren().add(createButtonToDeleteScores());
+		scoreSubscene.getPane().getChildren().add(createButtonToRefreshScores());
+	}
+	
+	// permet de faire un refresh des scores a l'affichage (utile apres avoir fini sa partie pour voir son score)
+	private void refreshScoreSubscene() {
+		scoreSubscene.getPane().getChildren().clear();
+		fillScoreSubscene();
 	}
 	
 	
@@ -361,6 +382,40 @@ public class ViewManager {
 		
 	}
 
+	// Boutons de la sections SCORES
+	private SpaceRunnerButton createButtonToDeleteScores() {
+		SpaceRunnerButton deleteButton = new SpaceRunnerButton("DELETE SCORES");
+		deleteButton.setLayoutX(350);
+		deleteButton.setLayoutY(300);
+		
+		deleteButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				save.clearSave();
+				int nbNode = scoreSubscene.getPane().getChildren().size();
+				for (int i = 2; i<nbNode-2 ; i++) {
+					scoreSubscene.getPane().getChildren().remove(2);						
+				}
+			}
+		});
+		return deleteButton;
+	}
+	
+	private SpaceRunnerButton createButtonToRefreshScores() {
+		SpaceRunnerButton refreshButton = new SpaceRunnerButton("REFRESH");
+		refreshButton.setLayoutX(150);
+		refreshButton.setLayoutY(300);
+		
+		refreshButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				refreshScoreSubscene();				
+			}
+		});
+		return refreshButton;
+	}
+	
+	
     private void createBackground() {
         Image backgroudImage = new Image("resources/space.png", 256, 256, false, false);
         BackgroundImage background = new BackgroundImage(backgroudImage, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null);

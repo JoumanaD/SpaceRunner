@@ -18,4 +18,5 @@ Projet CPA : SpaceRunner Game
 ![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/5-buttonCredits.png)
 
 [Game]
+
 ![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/6-Jeu.png)

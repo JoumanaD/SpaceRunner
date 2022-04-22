@@ -4,7 +4,7 @@ Projet CPA : SpaceRunner Game
 ## Images du jeu 
 [Menu]
 
-<img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/1-menu.png" width="490" height="360">  <img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/2-buttonPlay.png" width="490" height="360">
+<img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/1-menu.png" width="490" height="360">        <img src="https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/2-buttonPlay.png" width="490" height="360">
 ![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/1-menu.png =250x250)
 
 [Play Button]

@@ -2,6 +2,9 @@
 
 Implement game Space Runner in JavaFX 
 
+Set up the run configuration by adding:
+--module-path "YOUR\PATH\lib" --add-modules javafx.controls,javafx.fxml
+
 ## Images du jeu 
 ### Menu
 

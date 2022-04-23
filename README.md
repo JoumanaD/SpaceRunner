@@ -3,7 +3,7 @@
 
 Space Runner using `JavaFX` 
 
-Set up the run configuration for eclipse by adding:
+Set up the run configuration for `eclipse` by adding:
 ```bash
 --module-path "YOUR\PATH\lib" --add-modules javafx.controls,javafx.fxml
 ```

@@ -12,4 +12,7 @@ Set up the run configuration by adding:
 ## Images du jeu 
 
 ### Game
-![alt text](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/6-Jeu.png)
+
+| ![Screen 1](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/6-WhiteShip.png) | ![Screen 2](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/7-BlackShip.png) |
+|---------------------------------------------|---------------------------------------------|
+| ![Screen 3](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/8-BlueShip.png) | ![Screen 4](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/9-SorbonneShip.png) |

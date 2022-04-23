@@ -1,4 +1,5 @@
-# SpaceRunnerGame - Projet CPA
+# SpaceRunnerGame 
+## Projet CPA
 
 Space Runner using `JavaFX` 
 
@@ -21,7 +22,7 @@ Set up the run configuration for eclipse by adding:
 |---------------------------------------------|---------------------------------------------|
 | ![Screen 3](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/8-BlueShip.png) | ![Screen 4](https://github.com/JoumanaD/SpaceRunner/blob/main/src/resources/screenshots/9-SorbonneShip.png) |
 
-[[Back to top]](https://github.com/JoumanaD/SpaceRunner#index)
+[[Back to top]](https://github.com/JoumanaD/SpaceRunner#SpaceRunnerGame)
 
 ## Controls
 

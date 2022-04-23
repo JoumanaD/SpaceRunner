@@ -176,29 +176,32 @@ public class ViewManager {
 		encadrantTitre.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
 		encadrantTitre.setFill(Color.GOLD);
 		
-		Text prof = new Text (350, 185, "Binh-Minh Bui-Xuan");
-		prof.setFont(Font.font ("Verdana", FontWeight.BOLD, 20));
-		prof.setFill(Color.WHITE);
+		Text prof_cours = new Text (350, 170, "BUI-XUAN Binh-Minh");
+		Text prof_tme = new Text (350, 200, "ESCRIOU   Arthur");
+		prof_cours.setFont(Font.font ("Verdana", FontWeight.BOLD, 20));
+		prof_cours.setFill(Color.WHITE);
+		prof_tme.setFont(Font.font ("Verdana", FontWeight.BOLD, 20));
+		prof_tme.setFill(Color.WHITE);
 		
 		ImageView logoSorbonne = new ImageView("resources/logo_Sorbonne.png");
-		logoSorbonne.setFitWidth(150);
-		logoSorbonne.setFitHeight(150);
+		logoSorbonne.setFitWidth(130);
+		logoSorbonne.setFitHeight(130);
 		logoSorbonne.setLayoutX(390);
-		logoSorbonne.setLayoutY(220);
+		logoSorbonne.setLayoutY(230);
 		
 		ImageView logoJeu = new ImageView("resources/logo_Jeu.png");
-		logoJeu.setFitWidth(180);
+		logoJeu.setFitWidth(190);
 		logoJeu.setFitHeight(150);
 		logoJeu.setLayoutX(60);
 		logoJeu.setLayoutY(220);
 		
-		Text info = new Text (60, 230, "logo du groupe");
-		info.setFont(Font.font ("Verdana", 10));
+		Text info = new Text (110, 370, "logo du groupe");
+		info.setFont(Font.font ("Verdana", FontWeight.BOLD, 10));
 		
 		
 		
 		creditsSubscene.getPane().getChildren().addAll(creditsLabel, etudiantTitre, n1,n2, 
-				encadrantTitre, prof, logoSorbonne, logoJeu, info);
+				encadrantTitre, prof_cours, prof_tme, logoSorbonne, logoJeu, info);
 		
 	}
 	
